@@ -1,6 +1,6 @@
-package ExExceptionPers.aplication;
+package ExExceptionPers1;
 
-import ExExceptionPers.aplication.model.entities.Reservation;
+import ExExceptionPers1.model.entities.Reservation1;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,7 +22,7 @@ public class ExceptionsPers1 {
         if (!checkOut.after(checkIn)) {
             System.out.println("Error in reservation: Check-out date must be after check-in date");
         } else {
-            Reservation reservation = new Reservation(number, checkIn, checkOut);
+            Reservation1 reservation = new Reservation1(number, checkIn, checkOut);
             System.out.println("Reservations: " + reservation);
 
             System.out.println();

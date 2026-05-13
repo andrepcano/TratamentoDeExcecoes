@@ -1,10 +1,10 @@
-package ExExceptionPers.aplication.model.entities;
+package ExExceptionPers2.model.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-public class Reservation {
+public class Reservation2 {
 
     private Integer roomNumber;
     private Date checkIn;
@@ -12,10 +12,10 @@ public class Reservation {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public Reservation() {
+    public Reservation2() {
     }
 
-    public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
+    public Reservation2(Integer roomNumber, Date checkIn, Date checkOut) {
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -38,9 +38,17 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS); //converte o tempo que esta em m/s para dias
     }
 
-    public void updateDates(Date checkIn, Date checkOut) {
+    public String updateDates(Date checkIn, Date checkOut) {
+        Date now = new Date();
+        if (checkIn.before(now) || checkOut.before(now)) {
+            return "Reservation dates for update must be future dates";
+        }
+        if (!checkOut.after(checkIn)){
+            return "Check-out date must be after check-in date";
+        }
         this.checkIn = checkIn;
         this.checkOut = checkOut;
+        return null; //para falar que nao deu nenhum erro (se retornar algum sem ser null deu erro)
     }
 
     //o "toString" ja é uma sobreposição
@@ -58,3 +66,4 @@ public class Reservation {
 
     }
 }
+
