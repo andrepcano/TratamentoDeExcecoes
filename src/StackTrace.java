@@ -24,6 +24,7 @@ public class StackTrace {
 
         Scanner sc = new  Scanner(System.in);
 
+
         try {
             String[] vect = sc.nextLine().split(" ");
             int position = sc.nextInt();
