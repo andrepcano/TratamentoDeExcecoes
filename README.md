@@ -1,17 +1,19 @@
 # Tratamento de Exceções em Java
 
-Repositório criado para documentar a evolução das boas práticas no tratamento de exceções em Java, combinando três abordagens comparativas e dois exercícios desenvolvidos de forma independente.
+Repositório criado para documentar a evolução das boas práticas no tratamento de exceções em Java, combinando três abordagens comparativas e três exercícios desenvolvidos de forma independente.
 
 ---
 
 ## 📁 Estrutura do Projeto
+
 ```
 src/
 ├── ExExceptionPers1/      → ❌ Forma muito ruim
 ├── ExExceptionPers2/      → ⚠️ Forma ruim
 ├── ExExceptionPers3/      → ✅ Forma correta
 ├── ExExceptionFixacao/    → 🏋️ Exercício 1 — Conta Bancária
-└── ExExceptionFixacao2/   → 🏋️ Exercício 2 — Sistema de Pagamentos
+├── ExExceptionFixacao2/   → 🏋️ Exercício 2 — Sistema de Pagamentos
+└── ExExceptionFixacao3/   → 🏋️ Exercício 3 — Formas Geométricas
 ```
 
 ---
@@ -106,6 +108,34 @@ ExExceptionFixacao2/
     │   └── Effective.java          → Funcionário efetivo
     └── exceptions/
         └── PaymentException.java   → Exceção de pagamento personalizada
+Main.java                           → Classe principal
+```
+
+---
+
+## 🏋️ ExExceptionFixacao3 — Exercício 3: Formas Geométricas
+
+Exercício desenvolvido de forma independente combinando **classes abstratas**, **polimorfismo** e **exceções customizadas** para calcular áreas de formas geométricas.
+
+- Classe abstrata `Shape` com método abstrato `area()`
+- Subclasses `Circle`, `Rectangle` e `Triangle` com cálculos de área específicos
+- Exceção `InvalidMeasureException` lançada quando qualquer medida for zero ou negativa
+- Lista polimórfica `List<Shape>` armazenando os três tipos
+- `try/catch` dentro do loop de exibição para tratar cada forma individualmente
+- Maior área exibida ao final
+
+### Estrutura do ExExceptionFixacao3
+
+```
+ExExceptionFixacao3/
+└── model/
+    ├── entities/
+    │   ├── Shape.java              → Classe abstrata base
+    │   ├── Circle.java             → Forma círculo
+    │   ├── Rectangle.java          → Forma retângulo
+    │   └── Triangle.java           → Forma triângulo
+    └── exceptions/
+        └── InvalidMeasureException.java → Exceção de medida inválida
 Main.java                           → Classe principal
 ```
 
