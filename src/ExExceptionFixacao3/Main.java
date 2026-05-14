@@ -20,16 +20,18 @@ public class Main {
         int n = sc.nextInt();
 
         for (int i = 1; i <= n; i++) {
-            System.out.print("Enter the color: ");
-            String color = sc.next();
-            System.out.print("Please enter the shape you want to use (Circle/Rectangle/Triangle): ");
+            System.out.print("Please enter the shape you want to use (c/r/t): ");
             char ch =  sc.next().charAt(0);
             if (ch == 'c' || ch == 'C') {
+                System.out.print("Enter the color: ");
+                String color = sc.next();
                 System.out.print("Enter the radius: ");
                 double radius = sc.nextDouble();
                 Shape shape = new Circle(color, radius);
                 list.add(shape);
             } else if (ch == 'r' || ch == 'R') {
+                System.out.print("Enter the color: ");
+                String color = sc.next();
                 System.out.println("Enter the width: ");
                 double width = sc.nextDouble();
                 System.out.println("Enter the height: ");
@@ -37,6 +39,8 @@ public class Main {
                 Shape shape = new Rectangle(color, width, height);
                 list.add(shape);
             } else if (ch == 't' || ch == 'T') {
+                System.out.print("Enter the color: ");
+                String color = sc.next();
                 System.out.println("Enter the base: ");
                 double base = sc.nextDouble();
                 System.out.println("Enter the height: ");
@@ -61,7 +65,7 @@ public class Main {
         }
 
         System.out.println("Highest area: " + String.format("%.2f", highestArea));
-        
+
 
         sc.close();
     }
